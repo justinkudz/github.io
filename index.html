@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Intro Overlay -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-content">
+            <div class="profile-pic">
+                <img src="IMG_9947.jpg" alt="Profile Picture">
+            </div>
+            <h1 class="intro-name">Kudzinskas</h1>
+            <h2 class="intro-subtitle">My Portfolio</h2>
+            <div class="intro-instruction">Click anywhere to enter</div>
+        </div>
+    </div>
+
+    <!-- Main Content - Everything must be inside this main tag -->
+    <main class="main-content hidden" id="mainContent">
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
+                <div class="name">Justin Kudzinskas</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="index.html" class="active">Home</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#interests">Interests</a></li>
+                            <li><a href="#reflection">Reflection</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span class="nav-label">Progress</span>
+                        <ul class="dropdown-content">
+                            <li><a href="trading-progress.html">Trading</a></li>
+                            <li><a href="ai-progress.html">AI</a></li>
+                            <li><a href="financial-world.html">Finance</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span class="nav-label">Contact</span>
+                        <ul class="dropdown-content">
+                            <li><a href="mailto:justinkudzinskas5@gmail.com">Email</a></li>
+                            <li><a href="https://www.linkedin.com/in/justin-kudzinskas-736014199/" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1><span class="accent-text">Welcome</span> to My Portfolio</h1>
+                <div class="welcome-card">
+                    <p class="hero-description">
+                        I'm a curious student with a lot of different interests, from economics to technology. 
+                        I love exploring new ideas and constantly learning about the world around me. 
+                        My main goal is to build on these varied skills and gain the knowledge I need to make a real impact in my career. 
+                        I'm always looking for ways to grow and challenge myself, and I'm excited for what's next! 🚀
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interest Sections -->
+        <section id="interests" class="interests">
+            <div class="interest-grid">
+                <!-- Your interest cards -->
+                <div class="interest-card">
+                    <h3>📈 Algorithmic Trading</h3>
+                    <p>A recent interest of mine after learning how to use Python. I find this space intriguing and full of discovery, with countless ways to interpret strategies and generate alpha. The potential for innovation in this field excites me, and I'm eager to continue exploring its possibilities.</p>
+                </div>
+
+                <div class="interest-card">
+                    <h3>🤖 Artificial Intelligence</h3>
+                    <p>AI is imminently going to be a massive part of our lives, and the impact it's bound to have will be unimaginable. That's why I've taken the initiative to learn how AI is being applied and how I can make my own work more efficient and better—just like how I've done with this website that I've created.</p>
+                </div>
+
+                <div class="interest-card">
+                    <h3>💹 Financial World</h3>
+                    <p>I find the financial world fascinating, particularly its impact on large organizations and down to every single consumer. I'm truly intrigued by how I can merge my technical and interpersonal skills to build relationships, accelerate progress, and develop a fulfilling career. Areas that I'm really interested in are AI, technology, and energy. However, as you'll see, I tend to have an interest in most areas.</p>
+                </div>
+
+                <div class="interest-card">
+                    <h3>💡 Personal Ventures</h3>
+                    <p>I'm always trying to be entrepreneurial and explore new ideas, usually failing but always learning. The more I learn, the more I want to try new things—whether it's building trading bots, app development, or even creating a successful online marketing page on TikTok. I see no limits to where my curiosity and creativity can take me.</p>
+                </div>
+            </div>
+
+            <!-- Reflection Section -->
+            <div class="reflection-note" id="reflection">
+                <p>
+                    I will be the first person to say that I do not know enough yet and that what I write about and create might not be the best standard. However, this website, in my eyes, is a simple documentation of my thoughts and the development of what I learn.
+                </p>
+                <blockquote>
+                    "Success is the ability to go from one failure to another with no loss of enthusiasm."
+                    <cite>— Winston Churchill</cite>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Your existing script remains the same
+        window.onload = function() {
+            const introOverlay = document.getElementById('introOverlay');
+            const mainContent = document.getElementById('mainContent');
+            
+            if (introOverlay && mainContent) {
+                console.log('Elements found!');
+                
+                introOverlay.onclick = function() {
+                    console.log('Clicked!');
+                    
+                    introOverlay.style.opacity = '0';
+                    introOverlay.style.transition = 'opacity 0.5s ease';
+                    
+                    setTimeout(() => {
+                        introOverlay.style.display = 'none';
+                        mainContent.classList.remove('hidden');
+                        mainContent.classList.add('visible');
+                    }, 500);
+                };
+            } else {
+                console.error('Elements not found!');
+            }
+        };
+    </script>
+</body>
+</html> 
